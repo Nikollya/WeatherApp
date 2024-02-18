@@ -1,5 +1,5 @@
 import axios from "axios";
-import { apiKey } from "../constants";
+import { apiKey } from "../const/const.js";
 
 const forecastEndpoint = params=> `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${params.cityName}&days=${params.days}`;
 const locationsEndpoint = params=> `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${params.cityName}`;
@@ -8,11 +8,9 @@ const apiCall = async (endpoint)=>{
         method: 'GET',
         url: endpoint,
     };
+
       try{
         const response = await axios.request(options);
-/*
-          console.log(response["data"]["forecast"]["forecastday"][0]["hour"][0]["temp_c"]);
-*/
         return response.data;
       }catch(error){
         console.log('error: ',error);
@@ -29,3 +27,4 @@ export const fetchLocations = params=>{
     let locationsUrl = locationsEndpoint(params);
     return apiCall(locationsUrl);
 }
+

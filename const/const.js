@@ -2,8 +2,6 @@ export const apiKey = '8bf404ac299c4fb788c91606241102';
 
 export const weatherImages = {
     'Partly cloudy': require('../assets/images/partlycloudy.png'),
-    'Partly Cloudy': require('../assets/images/partlycloudy.png'),
-    'Patchy rain nearby': require('../assets/images/moderaterain.png'),
     'Moderate rain': require('../assets/images/moderaterain.png'),
     'Patchy rain possible': require('../assets/images/moderaterain.png'),
     'Sunny': require('../assets/images/sun.png'),
